@@ -14,5 +14,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.0.0
-      - run: export SECRET="${{ secrets.SECRET_TEST }}"
-      - run: echo "${SECRET}"
+      - run: SECRET="${{ secrets.SECRET_TEST }}" echo "${SECRET}"
