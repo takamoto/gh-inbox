@@ -14,4 +14,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.0.0
-      - run: SECRET="${{ secrets.SECRET_TEST }}" echo "${SECRET}"
+      - run: echo "key = ${{ secrets.SECRET_TEST }}"
