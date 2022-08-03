@@ -3,7 +3,7 @@ name: 'Deploy'
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 jobs:
   deploy:
@@ -14,4 +14,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.0.0
-      - run: echo 'Hello'
+      - run: echo "${}"
