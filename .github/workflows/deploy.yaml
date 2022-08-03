@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     environment:
-      name: Production
+      name: test
 
     runs-on: ubuntu-latest
 
