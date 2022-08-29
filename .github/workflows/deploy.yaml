@@ -1,18 +1,13 @@
 name: 'Deploy'
-
 on:
   push:
     tags:
       - '*'
-
 jobs:
   deploy:
     environment:
-      name: test
-
+      name: Release
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3.0.0
-      - run: echo "key = ${{ secrets.SECRET_TEST }}" > secret_value
-      - run: cat secret_value
+      - run: echo "deploy"
