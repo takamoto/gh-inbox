@@ -1,8 +1,6 @@
 name: 'Deploy'
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch: {}
 jobs:
   deploy:
     environment:
@@ -10,4 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.0.0
-      - run: echo "deploy"
+      - run: >
+          if [[ "${DUMMY_SECRET}" == "dummy" ]]; then
+            echo "dummy"
+          else
+            echo "not dummy"
+          fi
+        env:
+          DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
