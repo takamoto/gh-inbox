@@ -16,3 +16,10 @@ jobs:
           fi
         env:
           DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
+      - run: >
+          if [[ "${DUMMY_SECRET}" == "dummy" ]]; then
+            echo "dummy"
+          else
+            echo "not dummy"
+          fi
+
